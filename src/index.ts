@@ -21,7 +21,7 @@ const disconnect = () => (
   })
 );
 
-export default {
+export {
   Course,
   University,
   connect,
