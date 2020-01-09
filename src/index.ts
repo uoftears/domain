@@ -4,9 +4,9 @@ import mongoose from 'mongoose';
 import Course from './models/Course';
 import University from './models/University';
 // Connection Helpers
-const connect = (host: string) => (
+const connect = (host: string, options: object = {}) => (
   new Promise((resolve, reject) => {
-    mongoose.connect(host);
+    mongoose.connect(host, options);
     mongoose.connection.on('error', (err) => { reject(err); });
     mongoose.connection.once('open', () => { resolve(); });
   })
